@@ -4,7 +4,7 @@
 
 ## Discord kanal [linki](https://discord.gg/AN7uEyUb)
 
-## Sistem gereksinimleri klasik cosmos:
+## Sistem gereksinimleri:
 ```
 4 CPU
 8 RAM
@@ -60,44 +60,6 @@ empowerd keys add <WALLET_NAME>
 ```
 empowerd add-genesis-account <WALLET_NAME> 1000000umpwr
 ```
-
-## Gentx oluşturuyoruz:
-
-* <WALLET_NAME> kısmını düzenleyin.
-
-```
-empowerd gentx <WALLET_NAME> 1000000umpwr \
---chain-id=altruistic-1 \
---moniker="<MONIKER>" \
---commission-max-change-rate 0.1 \
---commission-max-rate 0.2 \
---commission-rate 0.05 \
---pubkey $(empowerd tendermint show-validator) \
---website="" \
---security-contact="" \
---identity="" \
---details=""
-```
-
-## Gentx dosyanız oluştu:
-
-* Winscp ile içersine girip: `/root/.empowerchain/config/gentx/` kısmından gentx'i masa üstünüze atın.
-* Gentx isminizi şu şekilde düzenleyin, örnek: `gentx-RuesValidator.json`
-* [Burayı](https://github.com/empowerchain/empowerchain) forklayın, not: bizim Buray'ı değil :)
-* Kendi forkunuzun reposunda testnet klasörüne giriniz ve add file diyin:
-
-![image](https://user-images.githubusercontent.com/101149671/193679961-7ff66bd6-ff22-4496-8389-745048bdeeee.png)
-
-* Dosya ismini oluşturun ve gentx dosyasını içine atın ve kaydetin: 
-
-![image](https://user-images.githubusercontent.com/101149671/193680137-52557ceb-e999-423c-b901-88c385709897.png)
-
-* Sonra aynı repodan sol üstten pull request (PR) yapın.
-* PR'ın içine atmanız gerek şu, masa üstüne attığınız dosyaya sağ tık yapıp not defteri ile açın, not defretrinden kopyalayıp PC'ın içine yapıştırın:
-
-![image](https://user-images.githubusercontent.com/101149671/193680659-753d07ef-f8f4-4707-add5-92068f6d38d1.png)
-
-![image](https://user-images.githubusercontent.com/101149671/193680773-eb1a12ee-303b-4132-af72-8679da6a5dd1.png)
 
 
 ## Genesisi indiriyoruz:
@@ -165,7 +127,7 @@ sudo journalctl -u empowerd -f -o cat
 empowerd tx staking create-validator \
 --amount=9900000umpwr \
 --pubkey=$(empowerd tendermint show-validator) \
---moniker=RuesValidator \
+--moniker=Berattrkz
 --chain-id=altruistic-1 \
 --commission-rate="0.10" \
 --commission-max-rate="0.20" \
@@ -173,8 +135,8 @@ empowerd tx staking create-validator \
 --min-self-delegation="1" \
 --fees=250umpwr \
 --gas=200000 \
---from=rues \
---website="http://forum.rues.info/" \
---details="https://linktr.ee/ruesandora0" \
+--from=cuzdan
+--website="https://github.com/berattrkz23/" \
+--details="https://github.com/berattrkz23/" \
 -y
 ```
